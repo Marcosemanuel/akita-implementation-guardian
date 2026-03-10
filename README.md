@@ -50,28 +50,38 @@ Baseada nos resultados empíricos do artigo **"Do Zero à Pós-Produção em 1 S
 
 ### Via Git Clone (recomendado)
 
+**Linux / macOS (Bash):**
 ```bash
-# Clone diretamente para o diretório de skills do seu projeto
-git clone https://github.com/Marcosemanuel/akita-implementation-guardian.git \
-  .agent/skills/akita-implementation-guardian
+git clone https://github.com/Marcosemanuel/akita-implementation-guardian.git .agent/skills/akita-implementation-guardian
+```
+
+**Windows (PowerShell):**
+```powershell
+git clone https://github.com/Marcosemanuel/akita-implementation-guardian.git .agent\skills\akita-implementation-guardian
 ```
 
 ### Via Git Submodule
 
 ```bash
-# Adiciona como submodule (mantém versionamento independente)
-git submodule add https://github.com/Marcosemanuel/akita-implementation-guardian.git \
-  .agent/skills/akita-implementation-guardian
+git submodule add https://github.com/Marcosemanuel/akita-implementation-guardian.git .agent/skills/akita-implementation-guardian
 ```
 
-### Manual
+### Download Manual (sem git)
 
+**Linux / macOS:**
 ```bash
-# Download e extração manual
 curl -L https://github.com/Marcosemanuel/akita-implementation-guardian/archive/main.zip -o aig.zip
 unzip aig.zip -d .agent/skills/
 mv .agent/skills/akita-implementation-guardian-main .agent/skills/akita-implementation-guardian
 rm aig.zip
+```
+
+**Windows (PowerShell):**
+```powershell
+Invoke-WebRequest -Uri https://github.com/Marcosemanuel/akita-implementation-guardian/archive/main.zip -OutFile aig.zip
+Expand-Archive aig.zip -DestinationPath .agent\skills\
+Rename-Item .agent\skills\akita-implementation-guardian-main .agent\skills\akita-implementation-guardian
+Remove-Item aig.zip
 ```
 
 ### Verificação
@@ -79,7 +89,8 @@ rm aig.zip
 Após a instalação, verifique que o arquivo `SKILL.md` está no caminho correto:
 
 ```bash
-cat .agent/skills/akita-implementation-guardian/SKILL.md
+cat .agent/skills/akita-implementation-guardian/SKILL.md      # Linux/macOS
+type .agent\skills\akita-implementation-guardian\SKILL.md      # Windows
 ```
 
 ---
