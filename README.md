@@ -46,6 +46,82 @@ Baseada nos resultados empíricos do artigo **"Do Zero à Pós-Produção em 1 S
 
 ---
 
+## 💡 O que ela faz?
+
+A Skill atua como um **sistema de governança embutido** no agente de IA. Ela intercepta decisões de código, arquitetura e processo em tempo real, aplicando guards especializados que garantem qualidade sem depender da memória do desenvolvedor.
+
+### 1. Transforma ideias em planos incrementais verificáveis
+
+> **Cenário:** Você diz "preciso de um sistema de e-commerce com auth, catálogo e carrinho"
+
+A Skill **não deixa o agente sair codando**. Em vez disso, o `plan_guard` quebra a ideia em incrementos pequenos e verificáveis (Small Releases), cada um com:
+- Escopo delimitado
+- Critérios de aceite
+- Testes obrigatórios
+- Plano de rollback
+
+**Resultado prático:** 6 incrementos ordenados, cada um entregável em horas, não semanas.
+
+### 2. Garante TDD em cada incremento — nunca "testes depois"
+
+> **Cenário:** O agente escreve uma função de validação de email
+
+O `test_guard` **bloqueia o avanço** até que os testes existam e passem. A regra é simples: *escreveu código, escreveu teste junto*. Não existe "depois faço os testes".
+
+**Métricas de referência:** 1.323 testes em 8 dias, ratio teste/código > 1:1, CI em ~22 segundos.
+
+### 3. Freia over-engineering e complexidade prematura
+
+> **Cenário:** O agente propõe uma state machine com 8 estados para delivery de email
+
+O `architecture_guard` identifica complexidade desproporcional e sugere simplificação. No artigo, essa intervenção reduziu **8 estados para 4** e **centenas de linhas para 40**.
+
+**Regra:** Se a solução exige explicar por que é simples, ela não é simples.
+
+### 4. Refactoring contínuo protegido por testes
+
+> **Cenário:** Um arquivo cresceu para 400 linhas e acumula 3 responsabilidades
+
+O `code_guard` detecta e sugere **refactoring cirúrgico** — extrair funções, separar módulos, renomear variáveis. Cada refactoring é protegido pelos testes existentes e leva minutos, não dias.
+
+**Referência:** 27 commits de refactoring em 8 dias. Nenhum arquivo ultrapassou 300 linhas.
+
+### 5. Segurança como hábito, não como fase final
+
+> **Cenário:** O agente adiciona um endpoint de API sem rate limiting
+
+O `security_guard` verifica automaticamente: secrets expostos, CVEs em dependências, headers de segurança, rate limiting, validação de input. A segurança é verificada **em cada commit**, não como uma sprint de emergência antes do deploy.
+
+**Referência:** 21 commits de segurança espalhados nos 8 dias.
+
+### 6. Recuperação de incidentes com causa raiz
+
+> **Cenário:** O job de notificação duplicou emails para 500 usuários
+
+Em vez de "apaga fogo e segue", a Skill ativa um workflow de investigação: timeline, causa raiz, lacunas de teste, fragilidade operacional. O resultado é uma **correção incremental com testes de prevenção**, não um hotfix desesperado.
+
+### 7. Auditoria técnica de código legado
+
+> **Cenário:** Você herdou um repositório Python sem testes e sem CI
+
+A Skill roda todos os 7 guards sobre o código existente e produz: parecer técnico consolidado, gaps priorizados (BLOCKER → HIGH → MEDIUM), plano de estabilização incremental e uma **Spec Viva** para contextualizar o agente sobre o projeto.
+
+---
+
+### 🔑 Diferencial técnico
+
+| Sem a Skill | Com a Skill |
+| --- | --- |
+| Agente coda em modo livre | Agente segue gates obrigatórios |
+| Testes são opcionais | Testes bloqueiam avanço |
+| Refactoring "depois" | Refactoring contínuo e protegido |
+| Segurança como fase final | Segurança em cada commit |
+| Incidente → hotfix | Incidente → causa raiz + prevenção |
+| Código cresce sem controle | Nenhum arquivo ultrapassa limites |
+| Contexto perdido entre sessões | Spec Viva persiste decisões |
+
+---
+
 ## 🚀 Instalação
 
 ### Via Git Clone (recomendado)
