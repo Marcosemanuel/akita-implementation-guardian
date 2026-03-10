@@ -1,0 +1,50 @@
+{
+  "severities": [
+    {
+      "level": "BLOCKER",
+      "description": "Impede avanço, merge ou continuação",
+      "action": "Resolver obrigatoriamente antes de prosseguir",
+      "examples": [
+        "Segredo exposto em código",
+        "Ausência de autenticação em endpoint público",
+        "Injeção SQL possível",
+        "Pipeline de CI inexistente",
+        "Race condition em processamento de pagamento",
+        "Plano sem etapas verificáveis"
+      ]
+    },
+    {
+      "level": "HIGH",
+      "description": "Impede ampliação saudável do escopo",
+      "action": "Resolver antes do próximo incremento",
+      "examples": [
+        "Cobertura insuficiente em fluxos críticos",
+        "Rate limiting ausente em API pública",
+        "Testes flaky comprometendo CI",
+        "Abstrações genéricas sem uso comprovado",
+        "Acoplamento forte entre módulos independentes"
+      ]
+    },
+    {
+      "level": "MEDIUM",
+      "description": "Deve entrar no próximo ciclo",
+      "action": "Registrar e priorizar",
+      "examples": [
+        "Repetição de código que deveria ser extraída",
+        "Logs contendo dados sensíveis não críticos",
+        "Integração sem timeout configurado",
+        "Documentação desatualizada"
+      ]
+    },
+    {
+      "level": "LOW",
+      "description": "Melhoria recomendada",
+      "action": "Registrar para consideração futura",
+      "examples": [
+        "Nomes de variáveis genéricos",
+        "Oportunidade de melhor formatação",
+        "Comentários redundantes"
+      ]
+    }
+  ]
+}

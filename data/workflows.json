@@ -1,0 +1,53 @@
+{
+  "workflows": [
+    {
+      "id": "build-from-plan",
+      "name": "Build from Plan",
+      "trigger": "Plano, PRD, ideia ou roadmap",
+      "agents": ["implementation_guard", "plan_guard", "architecture_guard", "test_guard", "security_guard", "resilience_guard", "spec_guard"],
+      "gates": ["plan", "foundation"]
+    },
+    {
+      "id": "stabilize-foundation",
+      "name": "Stabilize Foundation",
+      "trigger": "Base instável para crescer",
+      "agents": ["implementation_guard", "test_guard", "security_guard", "resilience_guard", "architecture_guard"],
+      "gates": ["foundation"]
+    },
+    {
+      "id": "implement-increment",
+      "name": "Implement Increment",
+      "trigger": "Incremento autorizado",
+      "agents": ["implementation_guard", "code_guard"],
+      "gates": ["increment"]
+    },
+    {
+      "id": "validate-increment",
+      "name": "Validate Increment",
+      "trigger": "Incremento implementado",
+      "agents": ["implementation_guard", "code_guard", "test_guard", "security_guard", "resilience_guard"],
+      "gates": ["validation"]
+    },
+    {
+      "id": "pre-merge-hardening",
+      "name": "Pre-Merge Hardening",
+      "trigger": "Antes de merge ou release",
+      "agents": ["implementation_guard", "test_guard", "security_guard", "resilience_guard", "spec_guard"],
+      "gates": ["merge"]
+    },
+    {
+      "id": "post-incident-recovery",
+      "name": "Post-Incident Recovery",
+      "trigger": "Incidente, bug sério ou regressão",
+      "agents": ["implementation_guard", "code_guard", "test_guard", "resilience_guard", "security_guard", "architecture_guard", "spec_guard"],
+      "gates": []
+    },
+    {
+      "id": "review-existing-codebase",
+      "name": "Review Existing Codebase",
+      "trigger": "Auditoria de código legado",
+      "agents": ["implementation_guard", "architecture_guard", "code_guard", "test_guard", "security_guard", "resilience_guard", "spec_guard"],
+      "gates": []
+    }
+  ]
+}

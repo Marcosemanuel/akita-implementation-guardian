@@ -1,0 +1,14 @@
+{
+  "increment_checklist": [
+    {"id": "scope", "check": "Escopo está delimitado e verificável", "mandatory": true},
+    {"id": "acceptance", "check": "Critérios de aceite estão definidos", "mandatory": true},
+    {"id": "tests", "check": "Testes esperados estão listados", "mandatory": true},
+    {"id": "rollback", "check": "Plano de rollback está documentado", "mandatory": true},
+    {"id": "risks", "check": "Riscos estão identificados", "mandatory": true},
+    {"id": "surfaces", "check": "Superfícies afetadas estão mapeadas", "mandatory": true},
+    {"id": "contract", "check": "Contrato do incremento está preenchido", "mandatory": true},
+    {"id": "arch_approval", "check": "Architecture guard aprovou a complexidade", "mandatory": false},
+    {"id": "dependencies", "check": "Dependências de outros incrementos estão resolvidas", "mandatory": true},
+    {"id": "ci_green", "check": "CI está verde antes de iniciar", "mandatory": true}
+  ]
+}

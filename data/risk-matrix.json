@@ -1,0 +1,28 @@
+{
+  "risk_levels": [
+    {
+      "level": "critical",
+      "description": "Pode causar perda de dados, exposição de segurança ou indisponibilidade total",
+      "action": "Bloquear imediatamente. Escalar para humano.",
+      "examples": ["Segredo exposto em produção", "Injeção SQL confirmada", "Perda de dados irreversível"]
+    },
+    {
+      "level": "high",
+      "description": "Impede crescimento saudável ou compromete integridade do sistema",
+      "action": "Resolver antes do próximo incremento.",
+      "examples": ["Ausência de autenticação", "Retry genérico em pagamento", "CI permanentemente quebrada"]
+    },
+    {
+      "level": "medium",
+      "description": "Deve ser tratado no próximo ciclo",
+      "action": "Registrar e priorizar no próximo plano.",
+      "examples": ["Cobertura de teste insuficiente", "Logs excessivos", "Abstrações prematuras"]
+    },
+    {
+      "level": "low",
+      "description": "Melhoria recomendada sem urgência",
+      "action": "Registrar para consideração futura.",
+      "examples": ["Nomes genéricos", "Comentários desatualizados", "Formatação inconsistente"]
+    }
+  ]
+}

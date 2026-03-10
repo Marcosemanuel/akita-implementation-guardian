@@ -1,0 +1,14 @@
+{
+  "plan_checklist": [
+    {"id": "scope_broken", "check": "Escopo está quebrado em incrementos pequenos", "mandatory": true},
+    {"id": "order_defined", "check": "Ordem de execução está definida", "mandatory": true},
+    {"id": "dod_defined", "check": "Definição de pronto existe para cada incremento", "mandatory": true},
+    {"id": "acceptance_criteria", "check": "Critérios de aceite estão claros e verificáveis", "mandatory": true},
+    {"id": "risks_identified", "check": "Riscos por etapa estão identificados", "mandatory": true},
+    {"id": "rollback_per_increment", "check": "Plano de rollback existe por incremento", "mandatory": true},
+    {"id": "deliverables_verifiable", "check": "Entregáveis são verificáveis (não vagos)", "mandatory": true},
+    {"id": "no_one_shot", "check": "Plano não tenta entregar tudo de uma vez", "mandatory": true},
+    {"id": "dependencies_respected", "check": "Dependências entre incrementos estão respeitadas", "mandatory": true},
+    {"id": "realistic_scope", "check": "Escopo total é realista para o contexto", "mandatory": true}
+  ]
+}

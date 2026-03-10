@@ -1,0 +1,14 @@
+{
+  "code_review_checklist": [
+    {"id": "readability", "check": "Código é legível para outro desenvolvedor", "severity_if_failed": "MEDIUM"},
+    {"id": "naming", "check": "Nomes de variáveis, funções e classes são descritivos", "severity_if_failed": "MEDIUM"},
+    {"id": "duplication", "check": "Repetições foram tratadas adequadamente", "severity_if_failed": "HIGH"},
+    {"id": "coupling", "check": "Acoplamento entre módulos é adequado", "severity_if_failed": "HIGH"},
+    {"id": "error_handling", "check": "Exceções são tratadas e não engolidas", "severity_if_failed": "BLOCKER"},
+    {"id": "patterns", "check": "Padrões e convenções do projeto são seguidos", "severity_if_failed": "MEDIUM"},
+    {"id": "regression_risk", "check": "Mudança não introduz risco de regressão", "severity_if_failed": "BLOCKER"},
+    {"id": "side_effects", "check": "Não há side-effects ocultos ou não documentados", "severity_if_failed": "HIGH"},
+    {"id": "complexity", "check": "Complexidade ciclomática é adequada", "severity_if_failed": "HIGH"},
+    {"id": "fragility", "check": "Não existem pontos frágeis que quebrem com mudanças futuras", "severity_if_failed": "HIGH"}
+  ]
+}

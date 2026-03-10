@@ -1,0 +1,70 @@
+{
+  "gates": [
+    {
+      "id": "plan",
+      "name": "Gate de Plano",
+      "when": "Antes de iniciar construção",
+      "checks": [
+        "Escopo quebrado em incrementos",
+        "Critérios de pronto definidos",
+        "Backlog incremental com ordem",
+        "Simplificação mínima aplicada",
+        "Riscos identificados por etapa",
+        "Plano de rollback por incremento"
+      ],
+      "responsible": ["plan_guard", "architecture_guard"]
+    },
+    {
+      "id": "foundation",
+      "name": "Gate de Fundação",
+      "when": "Antes do primeiro incremento",
+      "checks": [
+        "Baseline de testes configurada",
+        "Pipeline de CI saudável",
+        "Segurança mínima verificada",
+        "Observabilidade básica",
+        "Resiliência mínima em jobs",
+        "Spec Viva do Projeto existe ou foi criada"
+      ],
+      "responsible": ["test_guard", "security_guard", "resilience_guard", "spec_guard"]
+    },
+    {
+      "id": "increment",
+      "name": "Gate de Incremento",
+      "when": "Antes de cada implementação",
+      "checks": [
+        "Contrato do incremento preenchido",
+        "Riscos delimitados",
+        "Superfície controlada",
+        "Aprovação do implementation_guard"
+      ],
+      "responsible": ["implementation_guard"]
+    },
+    {
+      "id": "validation",
+      "name": "Gate de Validação",
+      "when": "Após cada incremento",
+      "checks": [
+        "Revisão de código aprovada",
+        "Testes existem e passam",
+        "Segurança verificada",
+        "Resiliência verificada",
+        "Nenhum BLOCKER pendente"
+      ],
+      "responsible": ["code_guard", "test_guard", "security_guard", "resilience_guard"]
+    },
+    {
+      "id": "merge",
+      "name": "Gate de Merge",
+      "when": "Antes de merge ou release",
+      "checks": [
+        "Todos blockers resolvidos",
+        "CI verde",
+        "Documentação atualizada",
+        "Próximo passo definido",
+        "Rollback documentado"
+      ],
+      "responsible": ["implementation_guard"]
+    }
+  ]
+}

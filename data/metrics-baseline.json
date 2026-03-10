@@ -1,0 +1,46 @@
+{
+  "source": "Do Zero à Pós-Produção em 1 Semana — Akita (2026-02-20)",
+  "url": "https://akitaonrails.com/2026/02/20/do-zero-a-pos-producao-em-1-semana-como-usar-ia-em-projetos-de-verdade-bastidores-do-the-m-akita-chronicles/",
+  "project_with_xp": {
+    "name": "The M.Akita Chronicles",
+    "duration_days": 8,
+    "commits": 274,
+    "commits_per_day": 34,
+    "total_tests": 1323,
+    "test_apps": {
+      "marvin_bot": {"tests": 970, "run_time_seconds": 6},
+      "newsletter": {"tests": 353, "run_time_seconds": 1}
+    },
+    "code_lines": 16000,
+    "code_with_tests_lines": 36000,
+    "test_to_code_ratio": ">1:1",
+    "ci_time_seconds": 22,
+    "ci_pipeline": ["rubocop", "bundler-audit", "brakeman", "tests"],
+    "coverage_business_logic": ">95%",
+    "feature_commits_pct": 37,
+    "hardening_commits_pct": 63,
+    "security_commits": 21,
+    "refactoring_commits": 27,
+    "forced_stops": 0,
+    "emergency_refactors": 0,
+    "bugs_caught_by_ci": ">50",
+    "user_stories_estimated": "180-200",
+    "applications": 4,
+    "services_marvin": 43,
+    "jobs_marvin": 38,
+    "services_newsletter": 12,
+    "jobs_newsletter": 11,
+    "prompt_templates": 23,
+    "brakeman_warnings": 0
+  },
+  "project_without_xp": {
+    "name": "FrankMD",
+    "duration_days": 19,
+    "commits": 212,
+    "commits_per_day": 11,
+    "largest_file_lines": 5000,
+    "emergency_refactors": 6,
+    "test_approach": "retroactive",
+    "forced_stops": 6
+  }
+}

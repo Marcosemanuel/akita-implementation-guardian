@@ -1,0 +1,21 @@
+{
+  "anti_patterns": [
+    {"id": "one-shot-build", "name": "Build em one-shot", "guard": "plan_guard", "description": "Tentar construir tudo de uma vez sem etapas"},
+    {"id": "tests-later", "name": "Testes depois", "guard": "test_guard", "description": "Adiar testes para quando o código estiver pronto"},
+    {"id": "optional-ci", "name": "CI opcional", "guard": "test_guard", "description": "Pipeline de CI inexistente ou ignorado"},
+    {"id": "blind-architecture", "name": "Arquitetura sem critério", "guard": "architecture_guard", "description": "Decisões baseadas em best practices sem contexto"},
+    {"id": "premature-abstraction", "name": "Abstração antes da dor", "guard": "architecture_guard", "description": "Generalizar sem casos de uso reais"},
+    {"id": "generic-retry", "name": "Retry genérico", "guard": "resilience_guard", "description": "Retry cego sem considerar tipo de erro"},
+    {"id": "excessive-state", "name": "Estado demais", "guard": "architecture_guard", "description": "State machines complexas para problemas simples"},
+    {"id": "no-timeout", "name": "Integração sem timeout", "guard": "resilience_guard", "description": "Chamadas externas sem timeout configurado"},
+    {"id": "no-rollback", "name": "Ausência de rollback", "guard": "plan_guard", "description": "Deploy ou merge sem plano de reversão"},
+    {"id": "implicit-security", "name": "Segurança implícita", "guard": "security_guard", "description": "Assumir segurança sem verificação"},
+    {"id": "no-observability", "name": "Sem observabilidade", "guard": "resilience_guard", "description": "Sistema sem logs, métricas ou alertas"},
+    {"id": "unstable-base-advance", "name": "Avanço com base instável", "guard": "implementation_guard", "description": "Features novas sobre base frágil"},
+    {"id": "vibe-coding", "name": "Vibe coding sem disciplina", "guard": "implementation_guard", "description": "Usar IA sem TDD, CI, small releases ou refactoring"},
+    {"id": "agent-no-brake", "name": "Agente sem freio humano", "guard": "implementation_guard", "description": "Aceitar tudo que o agente produz sem questionar"},
+    {"id": "no-spec-viva", "name": "Sem Spec Viva", "guard": "spec_guard", "description": "Não documentar contexto, decisões e hurdles para o agente"},
+    {"id": "retroactive-tests", "name": "Testes retroativos", "guard": "test_guard", "description": "Escrever testes depois em vez de TDD"},
+    {"id": "monster-file", "name": "Arquivo monstro", "guard": "code_guard", "description": "Deixar agente empilhar código sem refatorar"}
+  ]
+}
