@@ -50,12 +50,20 @@ Baseada nos resultados empíricos do artigo **"Do Zero à Pós-Produção em 1 S
 
 ### Via Git Clone (recomendado)
 
-**Linux / macOS (Bash):**
+**🐧 Linux (Bash/Zsh):**
+
 ```bash
 git clone https://github.com/Marcosemanuel/akita-implementation-guardian.git .agent/skills/akita-implementation-guardian
 ```
 
-**Windows (PowerShell):**
+**🍎 macOS (Terminal / Zsh):**
+
+```zsh
+git clone https://github.com/Marcosemanuel/akita-implementation-guardian.git .agent/skills/akita-implementation-guardian
+```
+
+**🪟 Windows (PowerShell):**
+
 ```powershell
 git clone https://github.com/Marcosemanuel/akita-implementation-guardian.git .agent\skills\akita-implementation-guardian
 ```
@@ -63,12 +71,14 @@ git clone https://github.com/Marcosemanuel/akita-implementation-guardian.git .ag
 ### Via Git Submodule
 
 ```bash
+# Linux / macOS / Windows (Git Bash)
 git submodule add https://github.com/Marcosemanuel/akita-implementation-guardian.git .agent/skills/akita-implementation-guardian
 ```
 
 ### Download Manual (sem git)
 
-**Linux / macOS:**
+**🐧 Linux / 🍎 macOS:**
+
 ```bash
 curl -L https://github.com/Marcosemanuel/akita-implementation-guardian/archive/main.zip -o aig.zip
 unzip aig.zip -d .agent/skills/
@@ -76,7 +86,8 @@ mv .agent/skills/akita-implementation-guardian-main .agent/skills/akita-implemen
 rm aig.zip
 ```
 
-**Windows (PowerShell):**
+**🪟 Windows (PowerShell):**
+
 ```powershell
 Invoke-WebRequest -Uri https://github.com/Marcosemanuel/akita-implementation-guardian/archive/main.zip -OutFile aig.zip
 Expand-Archive aig.zip -DestinationPath .agent\skills\
@@ -89,8 +100,13 @@ Remove-Item aig.zip
 Após a instalação, verifique que o arquivo `SKILL.md` está no caminho correto:
 
 ```bash
-cat .agent/skills/akita-implementation-guardian/SKILL.md      # Linux/macOS
-type .agent\skills\akita-implementation-guardian\SKILL.md      # Windows
+# 🐧 Linux / 🍎 macOS
+cat .agent/skills/akita-implementation-guardian/SKILL.md
+```
+
+```powershell
+# 🪟 Windows
+type .agent\skills\akita-implementation-guardian\SKILL.md
 ```
 
 ---
